@@ -1,0 +1,22 @@
+#%Module 1.0
+# Module file for Gasdynamic Toolkit (GDTk)
+# Compiler: ldc2
+# Build Date: Fri 20 Sep 2024 13:44:51 AEST
+# Commit: abc1ac22
+# Commit Age: 7 days ago
+# author: Nick Gibbons (n.gibbons@uq.edu.au)
+
+module-whatis "Setup environment variables for the Gasdynamic Toolkit (GDTk)"
+
+set gdtkrepo /Users/oliverdrummond/documents/github/gdtk
+set gdtk /Users/oliverdrummond/gdtkinst
+
+setenv DGD_REPO $gdtkrepo
+setenv DGD $gdtk
+append-path PATH $gdtk/bin
+append-path LD_LIBRARY_PATH $gdtk/lib
+setenv DGD_LUA_PATH $gdtk/lib/?.lua
+setenv DGD_LUA_CPATH $gdtk/lib/?.so
+append-path PYTHONPATH $gdtk/lib
+
+conflict dgd gdtk
